@@ -3,11 +3,9 @@ FROM ubuntu:14.04.1
 MAINTAINER prideout
 
 RUN apt-get -y update --fix-missing && apt-get install -y \
-    p7zip-full \
     ccache \
     cmake \
-    g++ \
-    git \
+    g++ gdb \
     libgif-dev \
     libwebp-dev \
     libpng12-dev \
@@ -16,8 +14,9 @@ RUN apt-get -y update --fix-missing && apt-get install -y \
     libopenjpeg-dev \
     libboost-dev libboost-filesystem-dev libboost-regex-dev libboost-system-dev libboost-thread-dev \
     software-properties-common \
-    python \
-    wget
+    python python-setuptools \
+    wget unzip \
+    scons
 
 RUN echo "/usr/local/lib64/" >/etc/ld.so.conf.d/lib64.conf
 RUN echo "/usr/local/lib/" >/etc/ld.so.conf.d/lib.conf
@@ -26,6 +25,7 @@ ENV LD_LIBRARY_PATH /usr/local/lib/:/usr/local/lib64/
 ENV OIIO_VERSION Release-1.5.17
 ENV ILMBASE_VERSION 2.2.0
 ENV OPENEXR_VERSION 2.2.0
+ENV GLM_VERSION 0.9.6.3
 
 # Fetch and Build ilmbase
 
@@ -56,6 +56,23 @@ RUN cd /root/oiio-${OIIO_VERSION} && \
     cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="ccache" -DCMAKE_CXX_COMPILER_ARG1="g++" && \
     make -j6 install
 
-# Sanity Checks
+# Fetch and Install glm, spdlog, and rapidjson
 
-RUN python -c 'import multiprocessing; print multiprocessing.cpu_count(), "processors"'
+RUN cd /root && \
+    wget https://github.com/g-truc/glm/archive/${GLM_VERSION}.tar.gz && \
+    tar xvfz ${GLM_VERSION}.tar.gz && \
+    mv glm-${GLM_VERSION}/glm/ /usr/local/include/glm/
+
+RUN cd /root && \
+    wget https://github.com/gabime/spdlog/archive/08b6b0.zip && \
+    unzip 08b6b0.zip && \
+    mv spdlog-*/include/spdlog/ /usr/local/include/spdlog/
+
+RUN cd /root && \
+    wget https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz && \
+    tar xvfz v1.0.2.tar.gz && \
+    mv rapidjson-*/include/rapidjson/ /usr/local/include/rapidjson/
+
+# Change the login directory
+
+RUN echo "cd /reba" >> /root/.bashrc
