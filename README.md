@@ -37,20 +37,20 @@ Reba provides the following C++ libraries all in one place:
 
 ### Getting started on OS X.
 
-1. Install [boot2docker](https://github.com/boot2docker/osx-installer/releases/latest), then type the following into your terminal:
+First, install [boot2docker](https://github.com/boot2docker/osx-installer/releases/latest), then type the following into your terminal:
 ```bash
 boot2docker init
 boot2docker start
 ```
-2. Clone this repo and cd into it:
+Clone this repo and cd into it:
 ```bash
 git clone https://github.com/prideout/reba.git && cd reba
 ```
-3. Type the following into your terminal, which invokes docker to create the machine image:
+Type the following into your terminal, which invokes docker to create the machine image:
 ```bash
 $(boot2docker shellinit)
 docker build -t prideout/reba .
 ```
-4. You may now use your new instance to build one of the example renderers:
-    - simple island shape generator in ([reba-demo](https://github.com/prideout/reba-island))
-    - my fork of the mitsuba renderer ([TBD]())
+You may now use your new instance to build one of the example renderers:
+- simple island shape generator in ([reba-demo](https://github.com/prideout/reba-island))
+- my fork of the mitsuba renderer ([TBD]())
