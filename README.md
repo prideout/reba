@@ -2,7 +2,7 @@
 
 Writing your very own C++ server-side renderer?  Reba provides a set of third-party libraries and build environment using Docker, so that you can hit the ground running.
 
-<div style="
+<!--div style="
     width:300px;
     border:solid 1px black;
     border-radius:10px;
@@ -24,7 +24,7 @@ Writing your very own C++ server-side renderer?  Reba provides a set of third-pa
             border-radius:10px;
             background: #eee;
             padding:5px"><b style="
-                ">Docker</b></div></div>
+                ">Docker</b></div></div-->
 
 ---
 
@@ -32,6 +32,8 @@ Reba provides the following C++ libraries all in one place:
 - [glm](https://github.com/g-truc/glm), a header-file only library for GLSL-like vector math.
 - [OpenImageIO](https://github.com/OpenImageIO/oiio), a high-quality image IO and texture sampling library.
 - All OpenImageIO dependencies, which include ilmbase and OpenEXR.
+- [RapidJSON](https://github.com/miloyip/rapidjson)
+- [spdlog](https://github.com/gabime/spdlog), which includes [cppformat](https://github.com/cppformat/cppformat).
 
 ### Getting started on OS X.
 
