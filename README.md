@@ -42,15 +42,15 @@ Reba provides the following C++ libraries all in one place:
 boot2docker init
 boot2docker start
 ```
-1. Clone this repo and cd into it:
+2. Clone this repo and cd into it:
 ```bash
 git clone https://github.com/prideout/reba.git && cd reba
 ```
-1. Type the following into your terminal, which invokes docker to create the machine image:
+3. Type the following into your terminal, which invokes docker to create the machine image:
 ```bash
 $(boot2docker shellinit)
 docker build -t prideout/reba .
 ```
-1. You may now use your new instance to build one of the example renderers:
+4. You may now use your new instance to build one of the example renderers:
     - simple island shape generator in ([reba-demo](https://github.com/prideout/reba-island))
     - my fork of the mitsuba renderer ([TBD]())
