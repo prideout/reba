@@ -14,7 +14,7 @@ RUN apt-get -y update --fix-missing && apt-get install -y \
     libopenjpeg-dev \
     wget unzip
 
-RUN apt-get -y update --fix-missing && apt-get install -y \
+RUN apt-get install -y \
     libboost-dev \
     libboost-filesystem-dev \
     libboost-regex-dev \
@@ -76,6 +76,12 @@ RUN cd /root && \
     wget https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz && \
     tar xvfz v1.0.2.tar.gz && \
     mv rapidjson-*/include/rapidjson/ /usr/local/include/rapidjson/
+
+# Python modules
+
+RUN apt-get install -y python-pip && \
+    pip install pytest \
+    pip install bottle
 
 # Change the login directory
 
