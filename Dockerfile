@@ -3,20 +3,24 @@ FROM ubuntu:14.04.1
 MAINTAINER prideout
 
 RUN apt-get -y update --fix-missing && apt-get install -y \
-    ccache \
-    cmake \
-    g++ gdb \
+    ccache cmake \
+    g++ gdb software-properties-common \
+    python python-setuptools python-dev scons \
     libgif-dev \
     libwebp-dev \
     libpng12-dev \
     libtiff5-dev \
     libjpeg-dev \
     libopenjpeg-dev \
-    libboost-dev libboost-filesystem-dev libboost-regex-dev libboost-system-dev libboost-thread-dev \
-    software-properties-common \
-    python python-setuptools \
-    wget unzip \
-    scons
+    wget unzip
+
+RUN apt-get -y update --fix-missing && apt-get install -y \
+    libboost-dev \
+    libboost-filesystem-dev \
+    libboost-regex-dev \
+    libboost-system-dev \
+    libboost-thread-dev \
+    libboost-python-dev
 
 RUN echo "/usr/local/lib64/" >/etc/ld.so.conf.d/lib64.conf
 RUN echo "/usr/local/lib/" >/etc/ld.so.conf.d/lib.conf
