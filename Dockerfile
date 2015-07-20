@@ -80,7 +80,7 @@ RUN cd /root && \
 # Python modules
 
 RUN apt-get install -y python-pip && \
-    pip install pytest \
+    pip install pytest && \
     pip install bottle
 
 # Change the login directory
