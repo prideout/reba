@@ -53,5 +53,3 @@ docker build -t prideout/reba .
 You may now use your new instance to build one of the example renderers:
 - simple island shape generator in [reba-island](https://github.com/prideout/reba-island)
 - my fork of the mitsuba renderer ([TBD]())
-<!-- pbrt too ? -->
-
