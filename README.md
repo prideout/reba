@@ -2,30 +2,6 @@
 
 Reba is a **re**nderer **ba**se that builds a set of high quality open-source C++ libraries using Docker, so that you can hit the ground running when starting your graphics project.
 
-<!--div style="
-    width:300px;
-    border:solid 1px black;
-    border-radius:10px;
-    padding:5px"><div style="
-        border:solid 1px black;
-        background: #eee;
-        border-radius:10px;
-        padding:5px"><b style="padding:0">Your Awesome Teapot Renderer</b>
-    </div><div style="
-        margin-top: 5px;
-        background: #eed;
-        border:solid 1px black;
-        border-radius:10px;
-        padding:5px"><b style="
-            ">Reba</b>
-        <div>OpenImageIO, glm, ...</div></div><div style="
-            margin-top: 5px;
-            border:solid 1px black;
-            border-radius:10px;
-            background: #eee;
-            padding:5px"><b style="
-                ">Docker</b></div></div-->
-
 ---
 
 Reba provides the following C++ libraries all in one place:
