@@ -1,6 +1,6 @@
 ## Reba
 
-Reba is a <b>ren</b>derer <b>ba</b>se that builds a set of high quality open-source C++ libraries using Docker, so that you can hit the ground running when starting your graphics project.
+Reba is a **re**nderer **ba**se that builds a set of high quality open-source C++ libraries using Docker, so that you can hit the ground running when starting your graphics project.
 
 <!--div style="
     width:300px;
